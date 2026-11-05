@@ -1,0 +1,95 @@
+<!doctype html>
+<!--
+  404 page. Static hosts serve this file at ANY broken URL (e.g. /a/b/c),
+  so every path here is root-absolute (starts with "/"), not relative.
+  This works when the site lives at the root of a domain. If it lives in a
+  sub-folder (e.g. user.github.io/repo/), see README.md → "Deploy".
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found — TODO Your Name</title>
+  <meta name="description" content="This page does not exist. Go back to the home page or browse the selected work.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TODO Your Name">
+  <meta property="og:title" content="Page not found — TODO Your Name">
+  <meta property="og:description" content="This page does not exist. Go back to the home page or browse the selected work.">
+  <meta property="og:image" content="https://TODO-your-domain.example/assets/og/404.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Page not found — TODO Your Name">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <!-- Before first paint: mark JS as available and apply a saved theme (no flash, no layout shift).
+       If main.js fails to load, onerror removes the "js" class so the nav stays visible. -->
+  <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script src="/js/main.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/"><span class="todo">TODO Your Name</span></a>
+
+      <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav" hidden>
+        <span class="menu-btn__bars" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a class="btn btn--secondary btn--small" href="/#contact">Contact</a></li>
+          <li>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+              <span class="theme-toggle__label">Dark theme</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="not-found" aria-labelledby="not-found-title">
+      <div class="container">
+        <h1 id="not-found-title">Page not found</h1>
+        <p class="lead">The link may be old or mistyped. These two places will get you back on track.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/">Home</a>
+          <a class="btn btn--secondary" href="/#work">Work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 <span class="todo">TODO Your Name</span></p>
+      <ul class="link-list">
+        <li><a href="mailto:TODO@example.com">Email</a></li>
+        <li><a href="/assets/cv.pdf">CV</a></li>
+        <li><a href="https://github.com/" rel="me">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/" rel="me">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

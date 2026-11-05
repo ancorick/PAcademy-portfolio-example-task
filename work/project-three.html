@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TODO Project three title — TODO Your Name</title>
+  <meta name="description" content="TODO Project three: one or two sentences (max ~155 characters): the problem, your role and the measurable outcome.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://TODO-your-domain.example/work/project-three.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph: link previews in messengers and social networks -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TODO Your Name">
+  <meta property="og:title" content="TODO Project three title — TODO Your Name">
+  <meta property="og:description" content="TODO Project three: same text as the description above.">
+  <meta property="og:url" content="https://TODO-your-domain.example/work/project-three.html">
+  <meta property="og:image" content="https://TODO-your-domain.example/assets/og/project-three.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TODO Project three title — TODO Your Name">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <!-- Before first paint: mark JS as available and apply a saved theme (no flash, no layout shift).
+       If main.js fails to load, onerror removes the "js" class so the nav stays visible. -->
+  <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script src="../js/main.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html"><span class="todo">TODO Your Name</span></a>
+
+      <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav" hidden>
+        <span class="menu-btn__bars" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a class="btn btn--secondary btn--small" href="../index.html#contact">Contact</a></li>
+          <li>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+              <span class="theme-toggle__label">Dark theme</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="case container container--prose">
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←&nbsp;</span>All work</a>
+
+      <header class="case__header">
+        <h1><span class="todo">TODO Project three title</span></h1>
+        <p class="lead"><span class="todo">TODO one-line outcome with a number (same as on the Home card)</span></p>
+        <dl class="meta">
+          <div>
+            <dt>Year</dt>
+            <dd><span class="todo">TODO year</span></dd>
+          </div>
+          <div>
+            <dt>Role</dt>
+            <dd><span class="todo">TODO your role</span></dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd><span class="todo">TODO tools and technologies</span></dd>
+          </div>
+          <div>
+            <dt>Links</dt>
+            <dd><a href="https://example.com/">Live</a> · <a href="https://github.com/">Source</a> <span class="todo">TODO real URLs, remove what does not exist</span></dd>
+          </div>
+        </dl>
+      </header>
+
+      <!-- Problem → Approach → Outcome: keep this order. -->
+      <section class="case__section" aria-labelledby="problem-title">
+        <h2 id="problem-title">Problem</h2>
+        <div class="prose">
+          <p><span class="todo">TODO what was broken or missing, for whom, and what it cost. Facts, not adjectives.</span></p>
+        </div>
+      </section>
+
+      <section class="case__section" aria-labelledby="approach-title">
+        <h2 id="approach-title">Approach</h2>
+        <div class="prose">
+          <p><span class="todo">TODO what you decided to do and why that over the alternatives. Show your judgment: constraints, trade-offs, what you chose not to build.</span></p>
+        </div>
+        <figure class="figure">
+          <!-- Replace with a real screenshot. Keep width/height (prevents layout shift) and lazy loading.
+               Prefer AVIF/WebP with a fallback:
+               <picture>
+                 <source srcset="../assets/img/TODO.avif" type="image/avif">
+                 <source srcset="../assets/img/TODO.webp" type="image/webp">
+                 <img src="../assets/img/TODO.jpg" width="1200" height="750" loading="lazy" decoding="async" alt="…">
+               </picture> -->
+          <img src="../assets/img/placeholder.svg" width="1200" height="750" loading="lazy" decoding="async" alt="TODO describe what the screenshot shows">
+          <figcaption><span class="todo">TODO caption: what the reader should notice</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="case__section" aria-labelledby="outcome-title">
+        <h2 id="outcome-title">Outcome</h2>
+        <ul class="metrics">
+          <li><strong><span class="todo">TODO number</span></strong><span><span class="todo">TODO what it measures, and versus what</span></span></li>
+          <li><strong><span class="todo">TODO number</span></strong><span><span class="todo">TODO what it measures, and versus what</span></span></li>
+        </ul>
+        <div class="prose">
+          <p><span class="todo">TODO one or two sentences: what changed for the user or the business, and what you would do next.</span></p>
+        </div>
+      </section>
+
+      <nav class="case__next" aria-label="Next steps">
+        <p>Next project: <a href="project-one.html"><span class="todo">TODO Project one title</span></a></p>
+        <a class="btn btn--primary" href="../index.html#contact">Contact</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 <span class="todo">TODO Your Name</span></p>
+      <ul class="link-list">
+        <li><a href="mailto:TODO@example.com">Email</a></li>
+        <li><a href="../assets/cv.pdf">CV</a></li>
+        <li><a href="https://github.com/" rel="me">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/" rel="me">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,171 @@
+/* ==========================================================================
+   layout.css — page grid and section spacing. Mobile-first.
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--width-page) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--prose {
+  max-width: calc(var(--width-prose) + 2 * var(--gutter));
+}
+
+/* ---- Sections ------------------------------------------------------------ */
+.section {
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.section__head {
+  margin-bottom: var(--space-6);
+}
+
+/* ---- Hero ---------------------------------------------------------------- */
+.hero {
+  padding-block: var(--space-7) var(--space-8);
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+.hero h1 {
+  max-width: 17ch;
+}
+
+.hero__bio {
+  margin-top: var(--space-5);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* ---- Selected work grid -------------------------------------------------- */
+.work-grid {
+  display: grid;
+  gap: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+/* ---- Experience timeline ------------------------------------------------- */
+.timeline {
+  display: grid;
+  gap: var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__item {
+  display: grid;
+  gap: var(--space-2);
+}
+
+/* ---- Contact ------------------------------------------------------------- */
+.contact > * + * {
+  margin-top: var(--space-5);
+}
+
+/* ---- Case study ---------------------------------------------------------- */
+.case {
+  padding-block: var(--space-6) var(--space-8);
+}
+
+.case__header {
+  margin-block: var(--space-5) var(--space-7);
+}
+
+/* A case study title is smaller than the home hero: the page is for reading. */
+.case__header h1 {
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+}
+
+.case__header .lead {
+  margin-top: var(--space-4);
+}
+
+.case__section {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.case__section > h2 {
+  margin-bottom: var(--space-4);
+}
+
+.case__section .figure,
+.case__section .metrics + .prose {
+  margin-top: var(--space-5);
+}
+
+.case__next {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-7);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---- 404 ----------------------------------------------------------------- */
+.not-found {
+  padding-block: var(--space-8);
+}
+
+.not-found h1 {
+  max-width: 14ch;
+}
+
+.not-found .lead {
+  margin-top: var(--space-4);
+}
+
+.not-found .hero__actions {
+  margin-top: var(--space-6);
+}
+
+/* ---- Footer spacing ------------------------------------------------------ */
+.site-footer {
+  margin-top: var(--space-8);
+  padding-block: var(--space-7);
+}
+
+/* ---- Wider screens ------------------------------------------------------- */
+@media (min-width: 40rem) {
+  .hero {
+    padding-block: var(--space-8) var(--space-9);
+  }
+
+  .section {
+    padding-block: var(--space-9);
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline__item {
+    grid-template-columns: 12rem 1fr;
+    gap: var(--space-5);
+  }
+
+  .case__next {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+@media (min-width: 64rem) {
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

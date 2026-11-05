@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TODO Your Name — TODO one-line positioning</title>
+  <meta name="description" content="TODO: one or two sentences (max ~155 characters) saying who you are, what you do and for whom. Shown in search results and link previews.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://TODO-your-domain.example/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph: link previews in messengers and social networks -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TODO Your Name">
+  <meta property="og:title" content="TODO Your Name — TODO one-line positioning">
+  <meta property="og:description" content="TODO: same text as the description above.">
+  <meta property="og:url" content="https://TODO-your-domain.example/">
+  <meta property="og:image" content="https://TODO-your-domain.example/assets/og/home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TODO Your Name — TODO one-line positioning">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <!-- Before first paint: mark JS as available and apply a saved theme (no flash, no layout shift).
+       If main.js fails to load, onerror removes the "js" class so the nav stays visible. -->
+  <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script src="js/main.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html"><span class="todo">TODO Your Name</span></a>
+
+      <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav" hidden>
+        <span class="menu-btn__bars" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a class="btn btn--secondary btn--small" href="#contact">Contact</a></li>
+          <li>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+              <span class="theme-toggle__label">Dark theme</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 1. Hero: who is this and what do they do? -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="hero__name"><span class="todo">TODO Your Name</span></p>
+        <h1 id="hero-title"><span class="todo">TODO one-line positioning: what you do, for whom, with what result</span></h1>
+        <p class="lead hero__bio"><span class="todo">TODO short bio, 2–3 sentences: your field, years or scale of experience, what you are looking for.</span></p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#work">Work</a>
+          <a class="btn btn--secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Selected work: can they actually do it? Outcome first. -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="work-title">Selected work</h2>
+        </div>
+        <ul class="work-grid">
+          <li class="card">
+            <p class="card__outcome"><span class="todo">TODO one-line outcome with a number</span></p>
+            <h3 class="card__title">
+              <a class="card__link" href="work/project-one.html"><span class="todo">TODO Project one title</span> <span class="card__arrow" aria-hidden="true">→</span></a>
+            </h3>
+            <p class="card__meta"><span class="todo">TODO year</span> · <span class="todo">TODO role</span></p>
+          </li>
+          <li class="card">
+            <p class="card__outcome"><span class="todo">TODO one-line outcome with a number</span></p>
+            <h3 class="card__title">
+              <a class="card__link" href="work/project-two.html"><span class="todo">TODO Project two title</span> <span class="card__arrow" aria-hidden="true">→</span></a>
+            </h3>
+            <p class="card__meta"><span class="todo">TODO year</span> · <span class="todo">TODO role</span></p>
+          </li>
+          <li class="card">
+            <p class="card__outcome"><span class="todo">TODO one-line outcome with a number</span></p>
+            <h3 class="card__title">
+              <a class="card__link" href="work/project-three.html"><span class="todo">TODO Project three title</span> <span class="card__arrow" aria-hidden="true">→</span></a>
+            </h3>
+            <p class="card__meta"><span class="todo">TODO year</span> · <span class="todo">TODO role</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Experience: confirms the work is real. Reverse chronological. -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="experience-title">Experience</h2>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <p class="timeline__dates"><span class="todo">TODO dates, e.g. 2023 – Present</span></p>
+            <div>
+              <h3 class="timeline__role"><span class="todo">TODO Role</span>, <span class="todo">TODO Company</span></h3>
+              <p><span class="todo">TODO one achievement, ideally with a number.</span></p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__dates"><span class="todo">TODO dates</span></p>
+            <div>
+              <h3 class="timeline__role"><span class="todo">TODO Role</span>, <span class="todo">TODO Company</span></h3>
+              <p><span class="todo">TODO one achievement, ideally with a number.</span></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. Contact: how do I reach them? -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact">
+          <h2 id="contact-title">Contact</h2>
+          <p class="lead"><span class="todo">TODO one sentence: what to get in touch about, e.g. “Open to full-time roles and freelance projects.”</span></p>
+          <p><a class="contact__email" href="mailto:TODO@example.com">TODO@example.com</a></p>
+          <ul class="link-list">
+            <li><a href="assets/cv.pdf">CV (PDF)</a> <span class="todo">TODO add the file assets/cv.pdf</span></li>
+            <li><a href="https://github.com/" rel="me">GitHub</a> <span class="todo">TODO your profile URL</span></li>
+            <li><a href="https://www.linkedin.com/" rel="me">LinkedIn</a> <span class="todo">TODO your profile URL</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 <span class="todo">TODO Your Name</span></p>
+      <ul class="link-list">
+        <li><a href="mailto:TODO@example.com">Email</a></li>
+        <li><a href="assets/cv.pdf">CV</a></li>
+        <li><a href="https://github.com/" rel="me">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/" rel="me">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

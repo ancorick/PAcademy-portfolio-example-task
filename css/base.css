@@ -1,0 +1,167 @@
+/* ==========================================================================
+   base.css — element defaults and typography. No layout, no components.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Author styles on a class must never beat the hidden attribute. */
+[hidden] {
+  display: none !important;
+}
+
+/* ---- Typography ---------------------------------------------------------- */
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-hero);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+}
+
+p,
+ul,
+ol,
+dl,
+figure {
+  margin: 0;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+strong {
+  font-weight: 600;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+/* ---- Focus: always visible, never obscured ------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+/* ---- Helpers ------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 10;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-text-muted);
+  max-width: 38rem;
+}
+
+/* Long-form text on case studies. */
+.prose > * + * {
+  margin-top: var(--space-4);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: var(--space-2);
+}
+
+/* ---- TODO markers --------------------------------------------------------
+   Visible on purpose: every one is a fact the owner still has to supply.
+   Find them all with:  grep -rn "TODO" .
+   Delete this rule once the last TODO is gone. */
+.todo {
+  outline: 2px dashed var(--color-border-strong);
+  outline-offset: 2px;
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border-radius: 2px;
+}

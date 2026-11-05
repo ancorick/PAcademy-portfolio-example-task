@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="TODO: replace with a project screenshot">
+  <style>
+    .bg { fill: #ececea; }
+    .line { stroke: #85878f; stroke-width: 2; stroke-dasharray: 10 8; fill: none; }
+    .label { fill: #55575e; font: 600 40px system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .hint { fill: #55575e; font: 400 26px system-ui, -apple-system, "Segoe UI", sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1b1d23; }
+      .line { stroke: #6b6f7a; }
+      .label, .hint { fill: #a3a6b0; }
+    }
+  </style>
+  <rect class="bg" width="1200" height="750"/>
+  <rect class="line" x="40" y="40" width="1120" height="670" rx="16"/>
+  <text class="label" x="600" y="360" text-anchor="middle">TODO: project screenshot</text>
+  <text class="hint" x="600" y="410" text-anchor="middle">1200 × 750, add to assets/img/ and update the alt text</text>
+</svg>

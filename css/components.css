@@ -1,0 +1,492 @@
+/* ==========================================================================
+   components.css — header, buttons, cards, footer and other reusable pieces.
+   Motion is limited to state changes (hover, focus, menu open) and uses
+   var(--motion), which is 0s under prefers-reduced-motion.
+   ========================================================================== */
+
+/* ---- Header -------------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-4);
+  padding-block: var(--space-2);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-size);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* Without JS the nav is simply a visible row of links. */
+.site-nav {
+  flex-basis: 100%;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a:not(.btn) {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-size);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--motion) ease;
+}
+
+.site-nav a:not(.btn):hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Menu button: only shown on small screens, and only once JS has revealed it. */
+.menu-btn {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap-size);
+  padding: 0 var(--space-4);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-weight: 600;
+  border: 2px solid var(--color-border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color var(--motion) ease;
+}
+
+.menu-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.menu-btn__bars,
+.menu-btn__bars::before,
+.menu-btn__bars::after {
+  display: block;
+  width: 1rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.menu-btn__bars {
+  position: relative;
+}
+
+.menu-btn__bars::before,
+.menu-btn__bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: transform var(--motion) ease, top var(--motion) ease;
+}
+
+.menu-btn__bars::before {
+  top: -5px;
+}
+
+.menu-btn__bars::after {
+  top: 5px;
+}
+
+.menu-btn[aria-expanded="true"] .menu-btn__bars {
+  background: transparent;
+}
+
+.menu-btn[aria-expanded="true"] .menu-btn__bars::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-btn[aria-expanded="true"] .menu-btn__bars::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Theme toggle lives in the nav list so tab order matches visual order. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap-size);
+  min-width: var(--tap-size);
+  padding: 0 var(--space-3);
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color var(--motion) ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+}
+
+.theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+}
+
+/* Small screens, JS available: nav becomes a collapsible menu. */
+@media (max-width: 39.999rem) {
+  .js .menu-btn {
+    display: inline-flex;
+  }
+
+  .js .site-nav {
+    display: none;
+  }
+
+  .js .site-nav.is-open {
+    display: block;
+    padding-bottom: var(--space-3);
+  }
+
+  .js .site-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .js .site-nav li {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .js .site-nav a:not(.btn),
+  .js .theme-toggle {
+    width: 100%;
+  }
+
+  /* Align the toggle's icon with the left edge of the links above it. */
+  .js .theme-toggle {
+    padding-inline: 0;
+  }
+
+  .js .site-nav li:has(.btn) {
+    padding-block: var(--space-3);
+  }
+
+  .js .site-nav .btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 40rem) {
+  .site-header__inner {
+    flex-wrap: nowrap;
+  }
+
+  .site-nav {
+    flex-basis: auto;
+  }
+
+  .site-nav ul {
+    flex-wrap: nowrap;
+    gap: var(--space-2) var(--space-5);
+  }
+
+  /* Icon-only on desktop; the label stays available to screen readers. */
+  .theme-toggle__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .theme-toggle {
+    padding: 0;
+    justify-content: center;
+  }
+}
+
+/* ---- Buttons ------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-size);
+  padding: 0 var(--space-5);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color var(--motion) ease, border-color var(--motion) ease, color var(--motion) ease;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.btn--primary:hover {
+  background: color-mix(in srgb, var(--color-accent) 86%, var(--color-text));
+  border-color: color-mix(in srgb, var(--color-accent) 86%, var(--color-text));
+  text-decoration: none;
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.btn--small {
+  padding: 0 var(--space-4);
+}
+
+/* ---- Project card -------------------------------------------------------- */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: border-color var(--motion) ease;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: var(--color-accent);
+}
+
+/* The outcome leads: it is the proof. */
+.card__outcome {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.015em;
+}
+
+.card__title {
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: var(--leading-snug);
+}
+
+/* One link, stretched over the whole card. */
+.card__link {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+
+.card:hover .card__link {
+  text-decoration: underline;
+}
+
+.card__link:focus-visible {
+  outline: none;
+}
+
+.card__link:focus-visible::after {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.card__arrow {
+  display: inline-block;
+  transition: transform var(--motion) ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card:hover .card__arrow {
+    transform: translateX(4px);
+  }
+}
+
+.card__meta {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ---- Experience ---------------------------------------------------------- */
+.timeline__dates {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.35em;
+}
+
+.timeline__role {
+  font-family: var(--font-text);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: var(--leading-snug);
+}
+
+.timeline__item p + p,
+.timeline__role + p {
+  margin-top: var(--space-2);
+}
+
+/* ---- Contact ------------------------------------------------------------- */
+.contact__email {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-size);
+}
+
+/* ---- Case study pieces --------------------------------------------------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-size);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: var(--space-4) var(--space-5);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.meta dt {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.meta dd {
+  margin: var(--space-1) 0 0;
+  font-weight: 500;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--space-5);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metrics li {
+  padding: var(--space-4) 0 0;
+  border-top: 2px solid var(--color-accent);
+}
+
+.metrics strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+.metrics li > span {
+  display: block;
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.figure img {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.figure figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ---- Footer -------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+}
